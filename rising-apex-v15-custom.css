@@ -1,0 +1,101 @@
+/* RISING APEX V15 — FULL CUSTOM XBOX SKIN
+   Use beta.gamepadviewer.com > Custom Skin > Custom CSS URL.
+   Do NOT use GPV Classic / Edit CSS URL.
+   Geometry uses the original 1283x1226 Rising Apex shell artwork,
+   scaled to an 800x765 canvas. All controls are positioned here.
+*/
+html,body{background:transparent!important}
+.controller.custom{
+ position:relative!important;
+ width:800px!important;height:765px!important;
+ background:transparent url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") center/800px 765px no-repeat!important;
+ overflow:visible!important;
+ filter:none!important;
+}
+.custom.disconnected div{display:none}
+/* Keep containers independent of the built-in Xbox skin. */
+.custom .sticks,.custom .abxy,.custom .bumpers,.custom .triggers,
+.custom .dpad,.custom .back,.custom .start,.custom .meta,
+.custom .quadrant{position:absolute!important;background:none!important}
+/* Thumbsticks: their parent is anchored, while GPV can apply its own
+   per-stick analog displacement. */
+.custom .sticks{left:0!important;top:0!important;width:800px!important;height:765px!important}
+.custom .stick{
+ position:absolute!important;width:70px!important;height:70px!important;
+ border-radius:50%!important;
+ background:radial-gradient(circle at 40% 36%,#30323b 0 38%,#171820 40% 60%,#090b12 63% 68%,#f928ce 70%,#65176b 74%,#0d0c17 79%)!important;
+ box-shadow:0 0 0 3px #12111d,0 0 8px #f928ce,0 0 16px #ff24cb80,inset 0 0 9px #000!important;
+ transform-origin:center!important;
+}
+.custom .stick.left{left:160px!important;top:314px!important}
+.custom .stick.right{left:485px!important;top:440px!important}
+.custom .stick.pressed{box-shadow:0 0 0 3px #14efff,0 0 14px #ff24cb,0 0 22px #12edff!important}
+/* ABXY: independent circular buttons, no baked-in letters. */
+.custom .abxy{left:0!important;top:0!important;width:800px!important;height:765px!important}
+.custom .button{
+ position:absolute!important;width:55px!important;height:55px!important;
+ border-radius:50%!important;
+ background:radial-gradient(circle,#17151f 50%,#0a0812 68%,#f62ac8 72%,#210c2b 80%)!important;
+ box-shadow:0 0 0 1px #ff2bd8,0 0 8px #ff24cb66!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ font:bold 34px/1 Arial,sans-serif!important;
+ color:transparent!important;text-indent:0!important;
+}
+.custom .button::after{display:block;position:absolute;inset:0;text-align:center;line-height:55px}
+.custom .button.a{left:588px!important;top:385px!important}
+.custom .button.b{left:650px!important;top:325px!important}
+.custom .button.x{left:526px!important;top:325px!important}
+.custom .button.y{left:588px!important;top:265px!important}
+.custom .button.a::after{content:"A";color:#46cb67}
+.custom .button.b::after{content:"B";color:#e33b53}
+.custom .button.x::after{content:"X";color:#25a9ff}
+.custom .button.y::after{content:"Y";color:#f8dd42}
+.custom .button.pressed{
+ background:radial-gradient(circle,#48204c 30%,#ff24cb 75%,#ff24cb 100%)!important;
+ box-shadow:0 0 12px #ff24cb,0 0 20px #12edff!important;
+}
+/* Shoulder bumpers follow the upper left/right arcs in the shell.
+   Invisible at rest: the shell already contains the neon outlines. */
+.custom .bumpers{left:0!important;top:0!important;width:800px!important;height:765px!important}
+.custom .bumper{
+ position:absolute!important;float:none!important;width:154px!important;height:34px!important;
+ top:163px!important;border-radius:55% 55% 25% 25%!important;
+ background:linear-gradient(180deg,#12edff44,#ff24cb77)!important;
+ opacity:0!important;
+ box-shadow:0 0 9px #ff24cb!important;
+}
+.custom .bumper.left{left:122px!important;transform:rotate(-15deg)!important}
+.custom .bumper.right{left:525px!important;transform:rotate(15deg)!important}
+.custom .bumper.pressed{opacity:.95!important;filter:drop-shadow(0 0 8px #12edff)!important}
+/* Analog triggers sit inside the two tall upper horns.
+   GPV may update inline opacity/data-value; use the latter if available. */
+.custom .triggers{left:0!important;top:0!important;width:800px!important;height:765px!important}
+.custom .trigger{
+ position:absolute!important;float:none!important;top:86px!important;
+ width:63px!important;height:105px!important;
+ background:linear-gradient(90deg,#ff24cb33,#12edff99,#ff24cb66)!important;
+ border:2px solid #ff24cb!important;border-radius:60% 60% 12% 12%!important;
+ box-shadow:0 0 12px #ff24cb!important;
+ opacity:0;
+}
+.custom .trigger.left{left:162px!important;transform:rotate(8deg)!important}
+.custom .trigger.right{left:575px!important;transform:rotate(-8deg)!important}
+.custom .trigger[data-value="0"]{opacity:0!important}
+.custom .trigger.pressed{opacity:.9!important}
+.custom .trigger-button{display:none!important}
+/* D-pad intentionally invisible, including all four directions. */
+.custom .dpad,.custom .face,.custom .arrows{display:none!important}
+/* Center View and Menu buttons: small neon symbols. */
+.custom .back,.custom .start{
+ top:341px!important;width:30px!important;height:30px!important;
+ border:1px solid #ff24c9!important;border-radius:50%!important;
+ background:#12121b!important;color:#fff!important;
+ box-shadow:0 0 6px #ff24c966!important;
+}
+.custom .back{left:363px!important}
+.custom .start{left:437px!important}
+.custom .back::after{content:"▣";position:absolute;inset:0;text-align:center;line-height:28px;color:#e9d7ff}
+.custom .start::after{content:"☰";position:absolute;inset:0;text-align:center;line-height:28px;color:#e9d7ff}
+.custom .back.pressed,.custom .start.pressed{background:#ff24cb!important;box-shadow:0 0 12px #12edff!important}
+/* Center status is not an extra physical button. */
+.custom .quadrant{display:none!important}
