@@ -1,0 +1,47 @@
+/* RISING APEX V8 - Xbox Classic Skin / Edit CSS
+   Shell illustration: image_2026-11-01_155422246.png
+   Preserves native GamePad Viewer controls and stick input.
+   Use GPV CLASSIC SKIN > Xbox One > Edit CSS URL.
+*/
+:root { --apex-pink:#ff21c9; --apex-cyan:#12edff; }
+html, body { background:transparent !important; }
+
+/* Keep the original game's controller dimensions and positioning.
+   The artwork replaces ONLY the housing sprite. */
+.controller.xbox, .xbox.controller, .xbox {
+  background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") !important;
+  background-repeat:no-repeat !important;
+  background-size:100% 100% !important;
+  background-position:center !important;
+  filter:drop-shadow(0 0 5px rgba(255,33,201,.36))
+         drop-shadow(0 0 10px rgba(18,237,255,.14));
+}
+
+/* Disable the older housing graphic if GPV uses an inner back element.
+   Do not use display:none on parent controllers or controls. */
+.xbox .background,
+.xbox .body {
+  background-color:transparent !important;
+}
+/* Keep controls responsive: no opacity zero, display none, or
+   visibility hidden rules for input elements. */
+.xbox .button, .xbox .bumper, .xbox .trigger,
+.xbox .stick, .xbox .face, .xbox .arrows,
+.xbox .dpad, .xbox .abxy {
+  transition:filter 65ms ease-out;
+}
+.xbox .stick {
+  filter:drop-shadow(0 0 3px rgba(255,33,201,.80));
+}
+.xbox .button.pressed, .xbox .bumper.pressed,
+.xbox .trigger.pressed, .xbox .face.pressed,
+.xbox .arrows.pressed, .xbox .stick.pressed,
+.xbox .pressed {
+  filter:brightness(1.45)
+         drop-shadow(0 0 5px var(--apex-pink))
+         drop-shadow(0 0 8px var(--apex-cyan)) !important;
+}
+/* NOTE: The drawing's shell silhouette may not align pixel-perfectly
+   with the Classic Xbox skin. Do not add extra static buttons.
+   If it is offset, adjust background-size and background-position
+   after a screenshot comparison. */
