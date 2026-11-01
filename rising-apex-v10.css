@@ -1,0 +1,41 @@
+/* RISING APEX V10 — fit correction for Xbox Classic GamePad Viewer
+   Uses the same shell, keeps all native controls interactive.
+   V9 screenshot showed the lower inset cutting through the D-pad/right stick.
+   Vertically extend artwork ONLY; do not resize/reposition controller DOM.
+*/
+:root { --apex-pink:#ff24c9; --apex-cyan:#13efff; }
+html,body { background:transparent !important; }
+.controller.xbox,.xbox.controller,.xbox {
+  background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:100% 112% !important;
+  filter:drop-shadow(0 0 6px #ff24c955);
+}
+/* All native controls remain present and animate normally. */
+.xbox .button,.xbox .bumper,.xbox .trigger,.xbox .stick,
+.xbox .face,.xbox .arrows,.xbox .dpad,.xbox .abxy,
+.xbox .back,.xbox .start,.xbox .meta,.xbox .quadrant,
+.xbox .arrow,.xbox .p0,.xbox .p1,.xbox .p2,.xbox .p3 {
+  visibility:visible !important;
+  opacity:1 !important;
+  transition:filter 75ms ease-out;
+}
+/* Reduce the glaring white shoulder/D-pad artwork, without hiding it. */
+.xbox .bumper,.xbox .trigger,.xbox .arrows,.xbox .dpad {
+  filter:brightness(.48) drop-shadow(0 0 3px #ff24c9aa);
+}
+.xbox .stick {
+  filter:drop-shadow(0 0 4px #ff24c9)
+         drop-shadow(0 0 7px #ff24c977);
+}
+.xbox .button,.xbox .face,.xbox .back,.xbox .start {
+  filter:drop-shadow(0 0 3px #ff24c977);
+}
+.xbox .pressed,.xbox .active,
+.xbox .button.pressed,.xbox .face.pressed,.xbox .arrows.pressed,
+.xbox .stick.pressed,.xbox .bumper.pressed,.xbox .trigger.pressed {
+  filter:brightness(1.5) drop-shadow(0 0 5px var(--apex-pink))
+         drop-shadow(0 0 9px var(--apex-cyan)) !important;
+}
+/* TUNE: change 112% to 108%-116% if the lower shell inset still overlaps controls. */
