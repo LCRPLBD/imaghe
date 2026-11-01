@@ -1,0 +1,43 @@
+/* RISING APEX V11 — compact bumpers, D-pad hidden
+   Xbox One / GPV Classic / Edit CSS URL.
+   V10 shell sizing is preserved. */
+:root{--apex-pink:#ff24c9;--apex-cyan:#13efff}
+html,body{background:transparent!important}
+.controller.xbox,.xbox.controller,.xbox{
+ background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png")!important;
+ background-repeat:no-repeat!important;
+ background-position:center top!important;
+ background-size:100% 112%!important;
+ filter:drop-shadow(0 0 6px #ff24c955)
+}
+.xbox .button,.xbox .bumper,.xbox .trigger,.xbox .stick,
+.xbox .face,.xbox .arrows,.xbox .dpad,.xbox .abxy,
+.xbox .back,.xbox .start,.xbox .meta,.xbox .quadrant,
+.xbox .arrow,.xbox .p0,.xbox .p1,.xbox .p2,.xbox .p3{
+ visibility:visible!important;opacity:1!important;transition:filter 75ms ease-out
+}
+/* Remove the D-pad graphic only; no changes to Gamepad API/input mapping.
+   Also target GPV's Xbox classic directional group. */
+.xbox .arrows,.xbox .dpad,.xbox .d-pad,
+.xbox .directional,.xbox .directional-pad{
+ visibility:hidden!important;opacity:0!important
+}
+/* Narrow the visible bumper sprite around its existing center.
+   Transforms can interfere with controller positioning, so adjust
+   only the visual bumper, never the parent controller. */
+.xbox .bumper,.xbox .bumpers .bumper,
+.xbox .bumper.left,.xbox .bumper.right{
+ transform:scaleX(.78) scaleY(.68);
+ transform-origin:center 65%;
+ filter:brightness(.48) drop-shadow(0 0 3px #ff24c9aa)
+}
+.xbox .trigger{filter:brightness(.5) drop-shadow(0 0 3px #ff24c9aa)}
+.xbox .stick{filter:drop-shadow(0 0 4px #ff24c9) drop-shadow(0 0 7px #ff24c977)}
+.xbox .button,.xbox .face,.xbox .back,.xbox .start{filter:drop-shadow(0 0 3px #ff24c977)}
+.xbox .pressed,.xbox .active,.xbox .button.pressed,
+.xbox .face.pressed,.xbox .stick.pressed,.xbox .bumper.pressed,
+.xbox .trigger.pressed{
+ filter:brightness(1.5) drop-shadow(0 0 5px var(--apex-pink))
+ drop-shadow(0 0 9px var(--apex-cyan))!important
+}
+/* If the D-pad persists, GPV's actual selector differs and needs inspection. */
