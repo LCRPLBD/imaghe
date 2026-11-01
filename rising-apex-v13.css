@@ -1,0 +1,52 @@
+/* RISING APEX V13 — shoulder correction
+   GPV Classic Xbox One > Edit CSS URL.
+   Reverts V12's trigger transform, which caused the oversized LT sprite.
+*/
+:root{--pink:#ff24cb;--cyan:#12edff}
+html,body{background:transparent!important}
+.controller.xbox,.xbox.controller,.xbox{
+ background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png")!important;
+ background-repeat:no-repeat!important;
+ background-position:center top!important;
+ background-size:100% 112%!important;
+ filter:drop-shadow(0 0 6px #ff24c955)
+}
+/* Never transform native trigger or bumper containers: their sprites
+   are positioned by GamePad Viewer, and transforms distort travel. */
+.xbox .trigger,.xbox .bumper{
+ transform:none!important;
+ transform-origin:initial!important;
+ border-radius:0!important;
+ box-shadow:none!important;
+}
+.xbox .trigger{
+ filter:brightness(.32) drop-shadow(0 0 3px #ff24c9aa);
+}
+.xbox .bumper{
+ filter:brightness(.40) drop-shadow(0 0 3px #ff24c9aa);
+}
+/* D-pad hidden visually; input remains mapped. */
+.xbox .arrows,.xbox .dpad,.xbox .d-pad,
+.xbox .directional,.xbox .directional-pad{
+ visibility:hidden!important;opacity:0!important
+}
+/* Xbox ABXY circular styling */
+.xbox .abxy .button,.xbox .button.a,.xbox .button.b,
+.xbox .button.x,.xbox .button.y{
+ border-radius:50%!important;
+ box-shadow:0 0 0 2px #fa2ac5bb,0 0 7px #fa2ac57a,
+ inset 0 0 7px #080a13;
+}
+.xbox .stick{
+ filter:drop-shadow(0 0 4px #ff24cb)
+        drop-shadow(0 0 7px #ff24cb88)
+}
+.xbox .pressed,.xbox .active,.xbox .button.pressed,
+.xbox .face.pressed,.xbox .stick.pressed,
+.xbox .bumper.pressed,.xbox .trigger.pressed{
+ filter:brightness(1.45) drop-shadow(0 0 5px var(--pink))
+        drop-shadow(0 0 9px var(--cyan))!important
+}
+/* The original bumper/trigger artwork is deliberately retained for
+   correct sizing and responsiveness. Pixel-perfect shoulder shapes
+   would require sprite-level asset replacement. */
