@@ -1,0 +1,42 @@
+/* Rising Apex V18: clean rebuild based on GamePad Viewer's published custom-skin DOM.
+   Custom Skin -> Custom CSS URL. Canvas 800x765.
+   Fixes V17's mistaken assumptions about the trigger data-value and bumper wrappers.
+*/
+html,body{margin:0!important;padding:0!important;background:transparent!important}
+.controller.custom{position:relative!important;left:0!important;top:0!important;margin:0!important;width:800px!important;height:765px!important;transform:none!important;background:transparent url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") left top/800px 765px no-repeat!important;overflow:visible!important}
+.custom.disconnected div{display:none!important}
+.custom .triggers,.custom .bumpers,.custom .sticks,.custom .abxy,.custom .arrows{position:absolute!important;left:0!important;top:0!important;width:800px!important;height:765px!important;background:none!important;margin:0!important;padding:0!important;transform:none!important}
+/* Triggers: GPV drives the analog opacity itself. NEVER set opacity:0
+   with !important on the trigger, as that overrides inline analog input. */
+.custom .trigger{position:absolute!important;display:block!important;float:none!important;width:53px!important;height:95px!important;top:88px!important;border-radius:52% 52% 12% 12%!important;background:linear-gradient(90deg,#ff24cb77,#13efffaa,#ff24cb77)!important;border:1px solid #ff24cb!important;box-shadow:0 0 8px #ff24cb!important;opacity:0;transition:opacity 40ms linear!important}
+.custom .trigger.left{left:174px!important;transform:rotate(8deg)!important}
+.custom .trigger.right{left:572px!important;transform:rotate(-8deg)!important}
+.custom .trigger[data-value="0"]{opacity:0}
+.custom .trigger[data-value]:not([data-value="0"]){opacity:.85}
+.custom .trigger.pressed{opacity:.95}
+.custom .trigger-button{position:absolute!important;top:88px!important;width:53px!important;height:95px!important;background:#13efff77!important;border-radius:52% 52% 12% 12%!important;opacity:0!important}
+.custom .trigger-button.left{left:174px!important}
+.custom .trigger-button.right{left:572px!important}
+.custom .trigger-button.pressed{opacity:.75!important}
+/* Bumpers: tiny arc overlays appear on input; no inherited white sprite. */
+.custom .bumper{position:absolute!important;display:block!important;float:none!important;top:215px!important;width:124px!important;height:12px!important;border:0!important;border-radius:80% 80% 25% 25%!important;background:linear-gradient(90deg,#ff24cb99,#13efff,#ff24cb99)!important;box-shadow:0 0 7px #ff24cb!important;opacity:0!important}
+.custom .bumper.left{left:151px!important;transform:rotate(-15deg)!important}
+.custom .bumper.right{left:524px!important;transform:rotate(15deg)!important}
+.custom .bumper.pressed{opacity:.95!important;filter:drop-shadow(0 0 7px #13efff)!important}
+/* Stick caps. GPV handles analog movement using inline positioning. */
+.custom .stick{position:absolute!important;width:68px!important;height:68px!important;border-radius:50%!important;background:radial-gradient(circle,#292a33 0 43%,#14141d 45% 60%,#0a0911 62%,#ff24cb 71%,#13111b 80%)!important;box-shadow:0 0 9px #ff24cb!important}
+.custom .stick.left{left:159px!important;top:313px!important}
+.custom .stick.right{left:486px!important;top:440px!important}
+.custom .stick.pressed{box-shadow:0 0 11px #13efff!important}
+/* Face buttons */
+.custom .button{position:absolute!important;width:54px!important;height:54px!important;border-radius:50%!important;background:radial-gradient(circle,#17151f 55%,#0a0812 67%,#f62ac8 73%)!important;box-shadow:0 0 0 1px #ff2bd8!important}
+.custom .button::after{position:absolute!important;inset:0!important;text-align:center!important;font:bold 34px/54px Arial,sans-serif!important}
+.custom .button.a{left:587px!important;top:384px!important}.custom .button.b{left:649px!important;top:324px!important}.custom .button.x{left:525px!important;top:324px!important}.custom .button.y{left:587px!important;top:264px!important}
+.custom .button.a::after{content:"A";color:#46cb67}.custom .button.b::after{content:"B";color:#e33b53}.custom .button.x::after{content:"X";color:#25a9ff}.custom .button.y::after{content:"Y";color:#f8dd42}
+.custom .button.pressed{box-shadow:0 0 14px #ff24cb,0 0 20px #12edff!important}
+/* D-pad invisible. */
+.custom .dpad,.custom .face,.custom .quadrant{display:none!important}
+.custom .back,.custom .start{position:absolute!important;top:341px!important;width:30px!important;height:30px!important;border-radius:50%!important;background:#12121b!important;border:1px solid #ff24c9!important}
+.custom .back{left:363px!important}.custom .start{left:437px!important}
+.custom .back::after{content:"▣";color:white}.custom .start::after{content:"☰";color:white}
+.custom .back.pressed,.custom .start.pressed{box-shadow:0 0 12px #13efff!important}
