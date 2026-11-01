@@ -1,0 +1,66 @@
+/* RISING APEX V12 — Xbox control styling
+   GPV Classic Skin > Xbox One > Edit CSS URL
+   Retains the V11 shell size and native controller input mapping.
+*/
+:root{--pink:#ff24cb;--cyan:#12edff}
+html,body{background:transparent!important}
+.controller.xbox,.xbox.controller,.xbox{
+ background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png")!important;
+ background-repeat:no-repeat!important;
+ background-position:center top!important;
+ background-size:100% 112%!important;
+ filter:drop-shadow(0 0 6px #ff24c955)
+}
+/* Preserve the underlying GPV positioning and moving elements. */
+.xbox .stick,.xbox .button,.xbox .bumper,.xbox .trigger,
+.xbox .face,.xbox .back,.xbox .start{
+ visibility:visible!important;opacity:1!important;
+ transition:filter 65ms ease-out,box-shadow 65ms ease-out
+}
+/* D-pad intentionally omitted from the visual overlay. */
+.xbox .arrows,.xbox .dpad,.xbox .d-pad,
+.xbox .directional,.xbox .directional-pad{
+ visibility:hidden!important;opacity:0!important
+}
+/* Xbox face buttons: compact dark caps, soft pink rim.
+   Existing A/B/X/Y letter art and positions remain native. */
+.xbox .abxy .button,.xbox .button.a,.xbox .button.b,
+.xbox .button.x,.xbox .button.y{
+ border-radius:50%!important;
+ box-shadow:0 0 0 2px #fa2ac5bb,0 0 7px #fa2ac57a,
+ inset 0 0 7px #080a13;
+ filter:brightness(1.1)
+}
+/* Keep thumbstick travel; style the movable cap, not its container. */
+.xbox .stick{
+ border-radius:50%;
+ filter:drop-shadow(0 0 4px #ff24cb)
+        drop-shadow(0 0 7px #ff24cb88)
+}
+/* Compact shoulder caps. Avoid changing top/left, so input alignment
+   remains that of GPV. */
+.xbox .bumper,.xbox .bumpers .bumper{
+ transform:scaleX(.69) scaleY(.46)!important;
+ transform-origin:center 72%!important;
+ border-radius:45% 45% 20% 20%!important;
+ filter:brightness(.30) sepia(1) saturate(5) hue-rotate(260deg)
+        drop-shadow(0 0 4px #ff24cb)
+}
+/* Tapered triggers. Their input state is still GPV-controlled. */
+.xbox .trigger{
+ transform:scaleX(.86)!important;
+ transform-origin:center bottom!important;
+ border-radius:38% 38% 12% 12%!important;
+ filter:brightness(.52) drop-shadow(0 0 4px #ff24cb99)
+}
+.xbox .back,.xbox .start,.xbox .meta{
+ filter:brightness(.75) drop-shadow(0 0 3px #ff24cb77)
+}
+.xbox .pressed,.xbox .active,.xbox .button.pressed,
+.xbox .face.pressed,.xbox .stick.pressed,
+.xbox .bumper.pressed,.xbox .trigger.pressed{
+ filter:brightness(1.55) drop-shadow(0 0 6px var(--pink))
+        drop-shadow(0 0 9px var(--cyan))!important
+}
+/* NOTE: GPV uses sprites; CSS can approximate, but cannot redraw
+   all button silhouettes or guarantee pixel-perfect alignment. */
