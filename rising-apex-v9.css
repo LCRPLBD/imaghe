@@ -1,0 +1,36 @@
+/* RISING APEX V9 — Xbox One GPV Classic Edit CSS
+   Keep V8's artwork and native geometry; restore controls. */
+:root { --apex-pink:#ff24c9; --apex-cyan:#13efff; }
+html,body { background:transparent !important; }
+.controller.xbox,.xbox.controller,.xbox {
+  background-image:url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-size:100% 100% !important;
+  filter:drop-shadow(0 0 6px #ff24c955);
+}
+/* Restore all native controls. Do not change controller size/position. */
+.xbox .button,.xbox .bumper,.xbox .trigger,.xbox .stick,
+.xbox .face,.xbox .arrows,.xbox .dpad,.xbox .abxy,
+.xbox .back,.xbox .start,.xbox .meta,.xbox .quadrant,
+.xbox .arrow,.xbox .p0,.xbox .p1,.xbox .p2,.xbox .p3 {
+  visibility:visible !important;
+  opacity:1 !important;
+  transition:filter 75ms ease-out;
+}
+/* Do not force display:block: GPV may use flex/inline layout. */
+.xbox .stick {
+  filter:drop-shadow(0 0 3px #ff24c9)
+         drop-shadow(0 0 6px #ff24c999);
+}
+.xbox .button,.xbox .face,.xbox .arrows,.xbox .dpad,
+.xbox .bumper,.xbox .trigger,.xbox .back,.xbox .start {
+  filter:drop-shadow(0 0 3px #ff24c977);
+}
+.xbox .pressed,.xbox .active,
+.xbox .button.pressed,.xbox .face.pressed,.xbox .arrows.pressed,
+.xbox .stick.pressed,.xbox .bumper.pressed,.xbox .trigger.pressed {
+  filter:brightness(1.5) drop-shadow(0 0 5px var(--apex-pink))
+         drop-shadow(0 0 9px var(--apex-cyan)) !important;
+}
+/* V8 background stays intact; no pseudo-elements covering controls. */
