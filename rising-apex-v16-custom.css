@@ -1,0 +1,48 @@
+/* RISING APEX V16 — CUSTOM SKIN, CANVAS FIX
+   beta.gamepadviewer.com/generate -> Custom Skin -> Custom CSS URL
+   Uses native 800x765 coordinate space and explicitly resets custom
+   controller offsets that may crop the top of the artwork.
+*/
+html,body{margin:0!important;padding:0!important;background:transparent!important;overflow:visible!important}
+.controller.custom,.custom.controller,.custom{
+ position:relative!important;
+ display:block!important;
+ top:0!important;left:0!important;right:auto!important;bottom:auto!important;
+ margin:0!important;padding:0!important;
+ width:800px!important;height:765px!important;min-width:800px!important;min-height:765px!important;
+ max-width:none!important;max-height:none!important;
+ transform:none!important;translate:none!important;
+ background:transparent url("https://raw.githubusercontent.com/LCRPLBD/imaghe/main/image_2026-11-01_155422246.png") 0 0/800px 765px no-repeat!important;
+ overflow:visible!important;
+}
+.custom .sticks,.custom .abxy,.custom .bumpers,.custom .triggers{
+ position:absolute!important;inset:0 auto auto 0!important;
+ width:800px!important;height:765px!important;
+ margin:0!important;padding:0!important;transform:none!important;background:none!important
+}
+.custom .stick{position:absolute!important;width:70px!important;height:70px!important;border-radius:50%!important;background:radial-gradient(circle,#292a33 0 43%,#12121b 45% 60%,#090a10 62%,#f928ce 72%,#13111b 79%)!important;box-shadow:0 0 9px #ff24cb!important}
+.custom .stick.left{left:160px!important;top:314px!important}
+.custom .stick.right{left:485px!important;top:440px!important}
+.custom .button{position:absolute!important;width:55px!important;height:55px!important;border-radius:50%!important;background:radial-gradient(circle,#17151f 55%,#0a0812 67%,#f62ac8 73%)!important;box-shadow:0 0 0 1px #ff2bd8!important;color:transparent!important}
+.custom .button::after{position:absolute!important;inset:0!important;display:block!important;text-align:center!important;font:bold 34px/55px Arial,sans-serif!important}
+.custom .button.a{left:588px!important;top:385px!important}
+.custom .button.b{left:650px!important;top:325px!important}
+.custom .button.x{left:526px!important;top:325px!important}
+.custom .button.y{left:588px!important;top:265px!important}
+.custom .button.a::after{content:"A";color:#46cb67}
+.custom .button.b::after{content:"B";color:#e33b53}
+.custom .button.x::after{content:"X";color:#25a9ff}
+.custom .button.y::after{content:"Y";color:#f8dd42}
+.custom .button.pressed{box-shadow:0 0 14px #ff24cb,0 0 20px #12edff!important}
+.custom .bumper{position:absolute!important;top:163px!important;width:154px!important;height:34px!important;border-radius:50%!important;background:#ff24cb66!important;opacity:0!important}
+.custom .bumper.left{left:122px!important;transform:rotate(-15deg)!important}
+.custom .bumper.right{left:525px!important;transform:rotate(15deg)!important}
+.custom .bumper.pressed{opacity:.85!important;box-shadow:0 0 12px #12edff!important}
+.custom .trigger{position:absolute!important;top:86px!important;width:63px!important;height:105px!important;background:linear-gradient(90deg,#ff24cb33,#12edff99,#ff24cb66)!important;border-radius:60% 60% 12% 12%!important;opacity:0!important}
+.custom .trigger.left{left:162px!important;transform:rotate(8deg)!important}
+.custom .trigger.right{left:575px!important;transform:rotate(-8deg)!important}
+.custom .trigger.pressed{opacity:.9!important;box-shadow:0 0 12px #ff24cb!important}
+.custom .dpad,.custom .face,.custom .arrows,.custom .quadrant{display:none!important}
+.custom .back,.custom .start{position:absolute!important;top:341px!important;width:30px!important;height:30px!important;border-radius:50%!important;background:#12121b!important;border:1px solid #ff24c9!important;box-shadow:0 0 6px #ff24c966!important}
+.custom .back{left:363px!important}.custom .start{left:437px!important}
+.custom .back::after{content:"▣";color:#fff}.custom .start::after{content:"☰";color:#fff}
